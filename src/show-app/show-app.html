@@ -106,6 +106,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
 
+    <firebase-app auth-domain="show-app-ec614.firebaseapp.com"
+      database-url="https://show-app-ec614.firebaseio.com/"
+      api-key="AIzaSyBHhz5MjJDvfP5tEWjrpYDPPUa4FIQuYGs">
+    </firebase-app>
+    <firebase-auth id="auth" user="{{user}}" provider="google" on-error="handleError">
+    </firebase-auth>
+
     <app-location route="{{route}}"></app-location>
     <app-route
         route="{{route}}"

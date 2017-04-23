@@ -1,0 +1,39 @@
+{
+  "name": "chrome-developer-channel",
+  "version": "1.0.0",
+  "description": "Shows for web developers",
+  "main": "service-worker.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "babel public/scripts -s --minified --compact true -d public/scripts-es5; bower install; echo 'Done. Ready to deploy.'",
+    "serve": "bower install; firebase serve & babel -w public/scripts -s --retain-lines -d public/scripts-es5",
+    "test": "polymer test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sethbergman/Chrome-Developer-Channel.git"
+  },
+  "keywords": [
+    "Polymer",
+    "Progressive",
+    "Web",
+    "Apps",
+    "PWA",
+    "Firebase",
+    "Node.js"
+  ],
+  "author": "Seth Bergman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sethbergman/Chrome-Developer-Channel/issues"
+  },
+  "homepage": "https://github.com/sethbergman/Chrome-Developer-Channel#readme",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "bower": "^1.8.0",
+    "firebase-tools": "^3.6.1"
+  }
+}

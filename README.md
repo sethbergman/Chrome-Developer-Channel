@@ -1,6 +1,7 @@
 # \<Chrome Developer Channel\>
-
 Shows for web developers
+----------
+![](https://raw.githubusercontent.com/sethbergman/Chrome-Developer-Channel/master/images/dev-channel.png)
 
 ## Install the Polymer-CLI
 

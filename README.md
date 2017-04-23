@@ -1,5 +1,7 @@
 # \<Chrome Developer Channel\>
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sethbergman/Chrome-Developer-Channel.svg)](https://greenkeeper.io/)
+
 Shows for web developers
 
 ## Install the Polymer-CLI

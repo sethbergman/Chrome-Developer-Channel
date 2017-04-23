@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "build": "babel public/scripts -s --minified --compact true -d public/scripts-es5; bower install; echo 'Done. Ready to deploy.'",
+    "start": "polymer build",
     "serve": "bower install; firebase serve & babel -w public/scripts -s --retain-lines -d public/scripts-es5",
     "test": "polymer test"
   },

@@ -39,3 +39,8 @@ polymer test
 ```
 
 Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
+
+## Deployment
+
+This app was deployed with [Firebase](https://console.firebase.google.com/). It also utilizes Docker for containerization and dev/prod parity for future iterations.
+

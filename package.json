@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "start": "npm install -g fpolymer-cli && polymer build",
+    "start": "npm install -g polymer-cli && polymer build",
     "serve": "bower install; firebase serve & babel -w public/scripts -s --retain-lines -d public/scripts-es5",
     "test": "polymer test"
   },

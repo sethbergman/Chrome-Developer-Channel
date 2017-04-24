@@ -5,7 +5,7 @@ Shows for web developers
 
 ## Install the Polymer-CLI
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. 
+First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed.
 ```
 npm install -g polymer-cli
 ```
@@ -44,3 +44,5 @@ Your application is already set up to be tested via [web-component-tester](https
 
 This app was deployed with [Firebase](https://console.firebase.google.com/). It also utilizes Docker for containerization and dev/prod parity for future iterations.
 
+## Demo:
+[Chrome Developer Channel](https://developer-channel.npmstack.com/)

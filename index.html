@@ -7,13 +7,12 @@
     <link rel="manifest" href="/manifest.json">
     <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="/src/show-app/show-app.html">
-
     <script>
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/service-worker.js');
-        });
-      }
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/service-worker.js')
+      })
+    }
     </script>
     <style>
       body {
@@ -26,8 +25,8 @@
     </style>
   </head>
   <body>
-    
-    <show-app></show-app>
+
+  <show-app></show-app>
 
   </body>
 </html>

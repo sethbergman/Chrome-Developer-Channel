@@ -1,14 +1,18 @@
 # \<Chrome Developer Channel\>
 Shows for web developers
 ----------
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+
 ![](https://raw.githubusercontent.com/sethbergman/Chrome-Developer-Channel/master/images/dev-channel.png)
 
 ## Install the Polymer-CLI
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed.
+
 ```
 npm install -g polymer-cli
 ```
+
 Then run `polymer serve` to serve your application locally.
 
 ## Viewing Your Application
@@ -42,7 +46,8 @@ Your application is already set up to be tested via [web-component-tester](https
 
 ## Deployment
 
-This app was deployed with [Firebase](https://console.firebase.google.com/). It also utilizes Docker for containerization and dev/prod parity for future iterations.
+This app was deployed with [Firebase](https://console.firebase.google.com/).
 
-## Demo:
-[Chrome Developer Channel](https://developer-channel.npmstack.com/)
+## Demo
+
+**[Chrome Developer Channel](https://developer-channel.npmstack.com/)**

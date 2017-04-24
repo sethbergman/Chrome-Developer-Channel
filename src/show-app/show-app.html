@@ -1,13 +1,3 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
@@ -110,16 +100,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       database-url="https://show-app-ec614.firebaseio.com/"
       api-key="AIzaSyBHhz5MjJDvfP5tEWjrpYDPPUa4FIQuYGs">
     </firebase-app>
+
     <firebase-auth id="auth" user="{{user}}" provider="google" on-error="handleError">
     </firebase-auth>
 
-    <app-location route="{{route}}"></app-location>
+    <app-location route="{{route}}">
+    </app-location>
+
     <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
-  
+      route="{{route}}"
+      pattern="/:page"
+      data="{{routeData}}"
+      tail="{{subroute}}">
+    </app-route>
+
     <app-header condenses reveals threshold="1">
       <app-toolbar>
         <paper-icon-button id="leftItem"></paper-icon-button>
@@ -168,8 +162,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         selected-attribute="active"
         attr-for-selected="name"
         fallback-selection="shows">
-      <show-list-page name="shows" subroute="[[subroute]]"></show-list-page>
-      <show-video-page name="video" subroute="[[subroute]]"></show-video-page>
+
+        <show-list-page name="shows" subroute="[[subroute]]"></show-list-page>
+
+        <show-video-page name="video" subroute="[[subroute]]"></show-video-page>
+
     </iron-pages>
 
   </template>
@@ -184,27 +181,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         'setup-toolbar': '_setupToolbar'
       },
 
-      attached: function() {
-        this.listen(window, 'location-changed', '_onLocationChange');
+      attached: function () {
+        this.listen(window, 'location-changed', '_onLocationChange')
       },
 
-      _setupToolbar: function(e) {
-        this.$.leftItem.onclick = e.detail.leftItemClickAction;
+      _setupToolbar: function (e) {
+        this.$.leftItem.onclick = e.detail.leftItemClickAction
 
         if (e.detail.leftItemIcon) {
-          this.$.leftItem.setAttribute('icon', e.detail.leftItemIcon);
+          this.$.leftItem.setAttribute('icon', e.detail.leftItemIcon)
         } else {
-          this.$.leftItem.removeAttribute('icon');
+          this.$.leftItem.removeAttribute('icon')
         }
       },
 
-      _onLocationChange: function() {
-        this.$.pages.selectedItem.backAction = function() {
-          window.history.back();
-        };
+      _onLocationChange: function () {
+        this.$.pages.selectedItem.backAction = function () {
+          window.history.back()
+        }
       }
 
-    });
+    })
 
   </script>
 </dom-module>

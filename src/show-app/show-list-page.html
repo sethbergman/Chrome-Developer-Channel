@@ -1,12 +1,3 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
@@ -140,14 +131,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <iron-ajax
-        auto
-        url="https://www.googleapis.com/youtube/v3/search?part=snippet&q=[[show.q]]&channelId=UCnUYZLuoy1rq1aVMwx4aTzw&order=date&maxResults=20&pageToken=[[pageToken]]&key=AIzaSyA053VCd78p0v2Pica01W_ljGUSAfzl0vA"
-        handle-as="json"
-        on-response="_onXhrResponse"></iron-ajax>
+      auto
+      url="https://www.googleapis.com/youtube/v3/search?part=snippet&q=[[show.q]]&channelId=UCnUYZLuoy1rq1aVMwx4aTzw&order=date&maxResults=20&pageToken=[[pageToken]]&key=AIzaSyA053VCd78p0v2Pica01W_ljGUSAfzl0vA"
+      handle-as="json"
+      on-response="_onXhrResponse">
+    </iron-ajax>
 
     <iron-media-query
-        query="max-width: 1280px"
-        query-matches="{{smallScreen}}"></iron-media-query>
+      query="max-width: 1280px"
+      query-matches="{{smallScreen}}">
+    </iron-media-query>
 
     <app-drawer opened="{{openedDrawer}}" persistent="[[persistentDrawer]]">
       <ul class="nav" role="navigation">
@@ -173,10 +166,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div class="loading-indicator" off$="[[lastPage]]">More videos to come...</div>
 
     <iron-scroll-threshold
-        id="scrollThreshold"
-        scroll-target="document"
-        lower-threshold="0"
-        on-lower-threshold="_onLowerThreshold"></iron-scroll-threshold>
+      id="scrollThreshold"
+      scroll-target="document"
+      lower-threshold="0"
+      on-lower-threshold="_onLowerThreshold">
+    </iron-scroll-threshold>
 
   </template>
 
@@ -194,14 +188,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         shows: {
           type: Array,
-          value: function() {
+          value: function () {
             return [
               { name: 'All', subroute: 'all', q: '' },
               { name: 'Polycasts', subroute: 'polycast', q: 'polycasts' },
               { name: 'Totally Tooling Tips', subroute: 'tips', q: 'totally tooling' },
               { name: 'A11ycasts', subroute: 'a11ycasts', q: 'a11ycasts' },
               { name: 'Supercharged', subroute: 'supercharged', q: 'supercharged' }
-            ];
+            ]
           }
         },
 
@@ -213,8 +207,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         items: {
           type: Array,
-          value: function() {
-            return [];
+          value: function () {
+            return []
           }
         },
 
@@ -249,70 +243,70 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _itemSizes: {},
 
-      _onXhrResponse: function(e) {
-        var response = e.detail.response;
-        var items = response.items;
+      _onXhrResponse: function (e) {
+        var response = e.detail.response
+        var items = response.items
 
         if (items.length === 0) {
-          this.lastPage = true;
+          this.lastPage = true
         } else {
           if (this.currentShow != this.show) {
-            this.set('items', []);
+            this.set('items', [])
           }
 
-          this.totalResults = response.pageInfo.totalResults;
+          this.totalResults = response.pageInfo.totalResults
 
           if (!response.nextPageToken) {
-            this.lastPage = true;
+            this.lastPage = true
           } else {
-            this.nextPageToken = response.nextPageToken;
+            this.nextPageToken = response.nextPageToken
           }
-          this.currentShow = this.show;
+          this.currentShow = this.show
 
-          items.forEach(function(item) {
-            this.push('items', item);
-          }, this);
+          items.forEach(function (item) {
+            this.push('items', item)
+          }, this)
         }
-        this.$.scrollThreshold.clearTriggers();
-      },
+        this.$.scrollThreshold.clearTriggers()
+  },
 
-      _onLowerThreshold: function() {
-        this.pageToken = this.nextPageToken;
-      },
+      _onLowerThreshold: function () {
+        this.pageToken = this.nextPageToken
+  },
 
-      _getActiveShow: function(shows, subroute) {
-        var key = subroute.path ? subroute.path.substr(1) : 'all';
-        var res = shows.filter(function(show) { return show.subroute == key; });
-        return res[0] ? res[0] : shows[0];
-      },
+      _getActiveShow: function (shows, subroute) {
+        var key = subroute.path ? subroute.path.substr(1) : 'all'
+        var res = shows.filter(function (show) { return show.subroute == key })
+        return res[0] ? res[0] : shows[0]
+  },
 
-      _didReachEnd: function(totalResults, itemsLength) {
-        return itemsLength >= totalResults;
-      },
+      _didReachEnd: function (totalResults, itemsLength) {
+        return itemsLength >= totalResults
+  },
 
-      _showDidChange: function() {
-        this.pageToken = '';
-        this.lastPage = false;
-        this.openedDrawer = this.persistentDrawer;
-      },
+      _showDidChange: function () {
+        this.pageToken = ''
+        this.lastPage = false
+        this.openedDrawer = this.persistentDrawer
+  },
 
-      _updateToolbar: function(active, smallScreen) {
+      _updateToolbar: function (active, smallScreen) {
         if (active) {
           this.fire('setup-toolbar', {
             leftItemIcon: smallScreen ? 'menu' : '',
             leftItemClickAction: this._leftItemClicked.bind(this)
-          });
+          })
         }
 
-        this.persistentDrawer = !smallScreen;
-        this.openedDrawer = !smallScreen;
-      },
+        this.persistentDrawer = !smallScreen
+        this.openedDrawer = !smallScreen
+  },
 
-      _leftItemClicked: function() {
-        this.openedDrawer = true;
-      }
+      _leftItemClicked: function () {
+        this.openedDrawer = true
+  }
 
-    });
+    })
 
   </script>
 </dom-module>

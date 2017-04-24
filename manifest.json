@@ -1,6 +1,6 @@
 {
-  "name": "Chrome Developer Channel",
-  "short_name": "Chrome Developer Channel",
+  "name": "chrome-developer-channel",
+  "short_name": "show-app",
   "description": "Shows for web developers",
   "start_url": "/",
   "display": "standalone"

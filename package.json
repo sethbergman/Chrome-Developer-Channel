@@ -1,5 +1,5 @@
 {
-  "name": "chrome-developer-channel",
+  "name": "the-progressive-web",
   "version": "1.0.0",
   "description": "Shows for web developers",
   "main": "service-worker.js",
@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "start": "npm install -g polymer-cli && polymer build && polymer serve -p 5000",
+    "start": "./bin/snap",
     "serve": "bower install; firebase serve & babel -w public/scripts -s --retain-lines -d public/scripts-es5",
     "test": "polymer test"
   },

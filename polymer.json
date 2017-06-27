@@ -8,7 +8,7 @@
   "sourceGlobs": [
    "src/**/*",
    "bower.json",
-   "app.yaml"
+   "snap/snapcraft.yaml"
   ],
   "includeDependencies": [
     "manifest.json",

@@ -3,7 +3,7 @@
 # Based on node:4-slim                                                            #
 #                                                                                 #
 # To build, do:                                                                   #
-#   $ docker build -t  xn0px90/docker-go-polymer-firebase                         #
+#   $ docker build -t  sethbergman/docker-go-polymer-firebase                         #
 # To pull do:                                                                     #
 #   $ docker pull xn0px90/docker-go-polymer-firebase                              #
 ###################################################################################

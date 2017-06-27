@@ -1,4 +1,4 @@
-# \<Chrome Developer Channel\>
+# \<The Progressive Web\>
 Shows for web developers
 ----------
 ![](https://raw.githubusercontent.com/sethbergman/Chrome-Developer-Channel/master/images/dev-channel.png)
